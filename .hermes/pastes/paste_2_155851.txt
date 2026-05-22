@@ -1,0 +1,7 @@
+Remove-Item : 找不到路径“C:\Program Files\Git\dev\null”，因为该路径不存在。
+所在位置 行:1 字符: 1
++ Remove-Item "C:\Program Files\Git\dev\null" -Force
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\Program Files\Git\dev\null:String) [Remove-Item], ItemNotFoundExcept
+   ion
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.RemoveItemCommand

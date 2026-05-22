@@ -1,0 +1,8 @@
+08:41
+yinpeng
+
+请修复 /dev/null
+
+SOLO Coder
+
+我看到你提到了 /dev/null ，这是 Unix/Linux 系统中的空设备文件。在 Windows 系统中没有 /dev/null ，而是使用 NUL

@@ -1,0 +1,14 @@
+// 错误：缺少 thinking 回传
+{
+  "model": "claude-opus-4-7",
+  "messages": [...],
+  "thinking": {"type":"enabled"}
+}
+
+// 正确：回传上一轮 thinking
+{
+  "model": "claude-opus-4-7",
+  "messages": [...],
+  "thinking": {"type":"enabled"},
+  "content": [{"type":"text","text":"...","thinking":"上一轮返回的thinking内容"}]
+}

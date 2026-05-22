@@ -1,0 +1,7 @@
+name: customer_service
+description: 评论和私信自动回复
+version: 0.1.0
+triggers:
+  - 回复评论
+  - 回复私信
+  - 客户互动

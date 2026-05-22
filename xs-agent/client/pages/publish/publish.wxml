@@ -1,0 +1,52 @@
+<view class="page">
+  <view class="form-container">
+    <view class="input-group">
+      <label>订单标题 *</label>
+      <input class="input" placeholder="请输入订单标题" value="{{title}}" bindinput="onTitleInput" />
+    </view>
+
+    <view class="input-group">
+      <label>订单描述</label>
+      <textarea class="input textarea" placeholder="请详细描述订单需求" value="{{description}}" bindinput="onDescInput" />
+    </view>
+
+    <view class="input-group">
+      <label>金额（元） *</label>
+      <input class="input" type="digit" placeholder="请输入订单金额" value="{{price}}" bindinput="onPriceInput" />
+    </view>
+
+    <view class="input-group">
+      <label>行业 *</label>
+      <picker mode="selector" range="{{industries}}" bindchange="onIndustryChange">
+        <view class="input select-trigger {{industry ? '' : 'placeholder'}}">
+          {{industry || '请选择行业'}}
+        </view>
+      </picker>
+    </view>
+
+    <view class="input-group">
+      <label>城市</label>
+      <picker mode="selector" range="{{cities}}" bindchange="onCityChange">
+        <view class="input select-trigger {{city ? '' : 'placeholder'}}">
+          {{city || '请选择城市'}}
+        </view>
+      </picker>
+    </view>
+
+    <view class="input-group">
+      <label>联系方式</label>
+      <input class="input" type="text" placeholder="联系电话（默认使用注册手机号）" value="{{contactPhone}}" bindinput="onContactInput" />
+    </view>
+
+    <button class="btn btn-primary btn-block" loading="{{submitting}}" bind:tap="handleSubmit">发布订单</button>
+  </view>
+
+  <view wx:if="{{showSuccess}}" class="success-overlay">
+    <view class="success-card">
+      <text class="success-icon">✅</text>
+      <text class="success-title">发布成功！</text>
+      <text class="success-desc">订单已发布，等待接单</text>
+      <button class="btn btn-primary" bind:tap="goToOrders">查看我的订单</button>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,22 @@
+providers:
+  - name: wcgio
+    base_url: https://520.wcgio.com/v1
+    api_key_env: XHS_AGENT_WCGIO_KEY
+    models:
+      fast: deepseek-chat
+      quality: gpt-5.2
+      creative: grok-4.1-fast
+
+  - name: huan666
+    base_url: https://ai.huan666.de/v1
+    api_key_env: XHS_AGENT_HUAN666_KEY
+    models:
+      fast: deepseek-v3.2
+      quality: claude-sonnet-4-6
+
+  - name: aicenter
+    base_url: https://aicenter.hejiu.icu/v1
+    api_key_env: XHS_AGENT_AICENTER_KEY
+    models:
+      fast: gpt-4o
+      quality: gpt-4o

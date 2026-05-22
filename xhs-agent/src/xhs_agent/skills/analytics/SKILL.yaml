@@ -1,0 +1,7 @@
+name: analytics
+description: 运营数据分析和周报生成
+version: 0.1.0
+triggers:
+  - 生成周报
+  - 数据分析
+  - 运营复盘

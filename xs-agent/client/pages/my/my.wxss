@@ -1,0 +1,126 @@
+.page {
+  min-height: 100vh;
+  padding-bottom: 20rpx;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  padding: var(--spacing-xl) var(--spacing-md);
+  background: var(--bg-primary);
+}
+
+.avatar {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  background: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: var(--spacing-md);
+}
+
+.avatar-text {
+  font-size: 48rpx;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.profile-info {
+  flex: 1;
+}
+
+.profile-name {
+  font-size: var(--font-xl);
+  font-weight: 700;
+  color: var(--text-primary);
+  display: block;
+}
+
+.profile-phone {
+  font-size: var(--font-sm);
+  color: var(--text-secondary);
+  display: block;
+  margin-top: 4rpx;
+}
+
+.profile-city {
+  font-size: var(--font-xs);
+  color: var(--text-tertiary);
+  display: block;
+  margin-top: 4rpx;
+}
+
+.stats-row {
+  display: flex;
+  background: var(--bg-primary);
+  padding: var(--spacing-md);
+  margin: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.stat-item {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-value {
+  font-size: var(--font-xl);
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.stat-label {
+  font-size: var(--font-xs);
+  color: var(--text-tertiary);
+  margin-top: 4rpx;
+}
+
+.menu-group {
+  background: var(--bg-primary);
+  margin: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 28rpx var(--spacing-md);
+  border-bottom: 1rpx solid var(--border);
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+.menu-icon {
+  font-size: 36rpx;
+  margin-right: var(--spacing-md);
+}
+
+.menu-label {
+  flex: 1;
+  font-size: var(--font-md);
+  color: var(--text-primary);
+}
+
+.menu-arrow {
+  font-size: var(--font-lg);
+  color: var(--text-tertiary);
+}
+
+.menu-item.logout {
+  justify-content: center;
+}
+
+.menu-item.logout .menu-label {
+  flex: none;
+  color: var(--danger);
+  text-align: center;
+}

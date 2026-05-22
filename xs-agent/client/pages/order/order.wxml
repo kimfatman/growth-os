@@ -1,0 +1,82 @@
+<view class="page">
+  <view wx:if="{{isDetail}}" class="detail-page">
+    <view class="detail-card">
+      <view class="detail-header">
+        <text class="detail-title">{{order.title}}</text>
+        <text class="detail-price">¥{{order.price}}</text>
+      </view>
+      <view class="detail-tags">
+        <text class="tag">{{order.industry}}</text>
+        <text wx:if="{{order.city}}" class="tag">{{order.city}}</text>
+        <text class="status-tag status-{{order.status}}">{{statusMap[order.status]}}</text>
+      </view>
+
+      <view class="detail-section">
+        <text class="section-title">订单描述</text>
+        <text class="section-content">{{order.description || '暂无描述'}}</text>
+      </view>
+
+      <view class="detail-section">
+        <text class="section-title">发布方信息</text>
+        <view class="contact-row">
+          <text class="contact-label">发布人：</text>
+          <text>{{order.publisherName || '未知'}}</text>
+        </view>
+        <view wx:if="{{order.publisherPhone}}" class="contact-row">
+          <text class="contact-label">电话：</text>
+          <text>{{order.publisherPhone}}</text>
+        </view>
+      </view>
+
+      <view wx:if="{{order.receiverName}}" class="detail-section">
+        <text class="section-title">接单方信息</text>
+        <view class="contact-row">
+          <text class="contact-label">接单人：</text>
+          <text>{{order.receiverName}}</text>
+        </view>
+        <view wx:if="{{order.receiverPhone}}" class="contact-row">
+          <text class="contact-label">电话：</text>
+          <text>{{order.receiverPhone}}</text>
+        </view>
+      </view>
+
+      <view class="detail-time">
+        <text>发布时间：{{formatTime(order.createdAt)}}</text>
+      </view>
+    </view>
+
+    <view class="detail-actions">
+      <button wx:if="{{order.status === 'pending' && !isMyOrder}}" class="btn btn-primary btn-block" bind:tap="handleAccept">立即接单</button>
+      <button wx:if="{{order.status === 'pending' && isMyOrder}}" class="btn btn-danger btn-block" bind:tap="handleCancel">取消订单</button>
+      <button wx:if="{{order.status === 'accepted' || order.status === 'processing'}}" class="btn btn-outline btn-block" bind:tap="handleContact">联系对方</button>
+      <button wx:if="{{isReceiver && order.status === 'accepted'}}" class="btn btn-primary btn-block" bind:tap="handleStartProcessing">开始处理</button>
+      <button wx:if="{{isReceiver && order.status === 'processing'}}" class="btn btn-primary btn-block" bind:tap="handleComplete">完成任务</button>
+    </view>
+  </view>
+
+  <view wx:else class="list-page">
+    <view class="tabs">
+      <view class="tab {{orderType === 'published' ? 'active' : ''}}" bind:tap="switchType" data-type="published">我发布的</view>
+      <view class="tab {{orderType === 'received' ? 'active' : ''}}" bind:tap="switchType" data-type="received">我接的</view>
+    </view>
+
+    <view wx:if="{{orders.length === 0 && !loading}}" class="empty-state">
+      <text>{{orderType === 'published' ? '还没有发布过订单' : '还没有接过单'}}</text>
+    </view>
+
+    <view wx:for="{{orders}}" wx:key="_id" class="order-card" bind:tap="goToDetail" data-id="{{item._id}}">
+      <view class="order-header">
+        <text class="order-title">{{item.title}}</text>
+        <text class="order-price">¥{{item.price}}</text>
+      </view>
+      <view class="order-tags">
+        <text class="tag">{{item.industry}}</text>
+        <text class="status-tag status-{{item.status}}">{{statusMap[item.status]}}</text>
+      </view>
+      <view class="order-footer">
+        <text class="publisher">{{orderType === 'published' ? '发布' : '接单'}}: {{orderType === 'published' ? (item.receiverName || '待接单') : (item.publisherName || '未知')}}</text>
+        <text class="time">{{formatTime(item.createdAt)}}</text>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,5 @@
+name: content
+description: "小红书笔记内容生成 — AI 生成标题、正文、标签，支持多种风格"
+version: "0.1.0"
+depends_on: []
+triggers: ["生成笔记", "写笔记", "create note"]

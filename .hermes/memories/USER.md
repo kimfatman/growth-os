@@ -1,0 +1,1 @@
+Always respond in Chinese (Simplified Chinese). The user is a Chinese speaker.

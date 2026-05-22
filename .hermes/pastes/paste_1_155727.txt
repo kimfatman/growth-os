@@ -1,0 +1,8 @@
+& : 无法将“C:\Program Files\Git\usr\bin\python3.exe”项识别为 cmdlet、函数、脚本文件或可运行程序的名称。请检查名称的拼
+写，如果包括路径，请确保路径正确，然后再试一次。
+所在位置 行:1 字符: 4
++  & "C:\Program Files\Git\usr\bin\python3.exe" -c "import os; os.unlin ...
++    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\Program Files\Git\usr\bin\python3.exe:String) [], CommandNotFoundExc
+   eption
+    + FullyQualifiedErrorId : CommandNotFoundException

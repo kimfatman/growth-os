@@ -1,0 +1,47 @@
+niche: 武汉财税审计
+debug: false
+cookie_path: D:\app\123\xhs-agent\config\cookie.json
+data_dir: D:\app\123\xhs-agent\data
+
+# 风控规则
+risk_control:
+  daily_publish_count: 1
+  publish_interval_min: 5
+  publish_interval_max: 15
+  auto_reply_comments: true
+  banned_word_check: full
+  content_safety_threshold: 0.6
+  max_retries_on_fail: 3
+
+  # 高级防封策略
+  anti_detection:
+    enabled: true
+    # 操作延迟范围（秒）
+    min_operation_delay: 2
+    max_operation_delay: 8
+    # 每日最高操作次数
+    daily_max_api_calls: 50
+    daily_max_publish: 1
+    daily_max_replies: 30
+    # 回复间隔范围（秒）
+    reply_min_interval: 3
+    reply_max_interval: 12
+    # 发布时间窗口（避免整点/半点）
+    publish_minute_avoid: [0, 30]
+    # 真人模拟行为
+    human_like_typing: true
+    random_scroll: true
+    mouse_trajectory: true
+
+task_routing:
+  topic_research: fast
+  content_generation: quality
+  style_formatting: fast
+  banned_word_check: full
+  customer_service: fast
+  data_analysis: fast
+
+schedule:
+  topic_monitor_hours: 6
+  daily_publish_count: 1
+  publish_interval_minutes: 10

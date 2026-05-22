@@ -1,0 +1,9 @@
+/etc/profile.d/aliases.sh: line 15: /dev/null: No such device or address
+/etc/profile.d/aliases.sh: line 15: /dev/null: No such device or address
+/etc/profile.d/aliases.sh: line 15: /dev/null: No such device or address
+/etc/profile.d/aliases.sh: line 15: /dev/null: No such device or address
+/etc/profile.d/aliases.sh: line 15: /dev/null: No such device or address
+/etc/profile.d/aliases.sh: line 15: /dev/null: No such device or address
+/etc/profile.d/aliases.sh: line 15: /dev/null: No such device or address
+/etc/profile.d/git-prompt.sh: line 22: /dev/null: No such device or address
+mknod: /dev/null: Bad address

@@ -1,0 +1,132 @@
+.page {
+  min-height: 100vh;
+  padding-bottom: 20rpx;
+}
+
+.search-bar {
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: var(--bg-primary);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.search-input {
+  display: flex;
+  align-items: center;
+  background: var(--bg-secondary);
+  border-radius: 100rpx;
+  padding: 16rpx 32rpx;
+}
+
+.search-icon {
+  margin-right: 16rpx;
+  font-size: var(--font-lg);
+}
+
+.search-input input {
+  flex: 1;
+  font-size: var(--font-md);
+  color: var(--text-primary);
+}
+
+.filters {
+  padding: var(--spacing-xs) var(--spacing-md);
+  background: var(--bg-primary);
+  position: sticky;
+  top: 96rpx;
+  z-index: 10;
+}
+
+.filter-row {
+  display: flex;
+  gap: var(--spacing-sm);
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.filter-tag {
+  display: inline-block;
+  padding: 12rpx 28rpx;
+  background: var(--bg-secondary);
+  border-radius: 100rpx;
+  font-size: var(--font-sm);
+  color: var(--text-secondary);
+}
+
+.filter-tag.active {
+  background: var(--primary-light);
+  color: var(--primary);
+  font-weight: 500;
+}
+
+.order-list {
+  padding: var(--spacing-sm) 0;
+}
+
+.order-card {
+  background: var(--bg-primary);
+  margin: var(--spacing-sm) var(--spacing-md);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.order-card:active {
+  opacity: 0.8;
+}
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-sm);
+}
+
+.order-title {
+  font-size: var(--font-lg);
+  font-weight: 600;
+  color: var(--text-primary);
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-right: var(--spacing-sm);
+}
+
+.order-price {
+  font-size: var(--font-xl);
+  font-weight: 700;
+  color: var(--danger);
+}
+
+.order-tags {
+  display: flex;
+  gap: var(--spacing-xs);
+  align-items: center;
+  margin-bottom: var(--spacing-sm);
+  flex-wrap: wrap;
+}
+
+.order-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.publisher {
+  font-size: var(--font-sm);
+  color: var(--text-secondary);
+}
+
+.time {
+  font-size: var(--font-xs);
+  color: var(--text-tertiary);
+}
+
+.loading-more {
+  text-align: center;
+  padding: var(--spacing-md);
+  color: var(--text-tertiary);
+  font-size: var(--font-sm);
+}

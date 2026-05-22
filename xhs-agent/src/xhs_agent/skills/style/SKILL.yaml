@@ -1,0 +1,5 @@
+name: style
+description: "排版优化 + 违禁词检测 — emoji 排版、敏感词扫描、自动替换"
+version: "0.1.0"
+depends_on: ["content"]
+triggers: ["排版", "检测违禁词", "style check"]

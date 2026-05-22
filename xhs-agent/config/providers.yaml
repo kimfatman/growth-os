@@ -1,0 +1,16 @@
+providers:
+  - name: deepseek
+    base_url: https://api.deepseek.com/v1
+    api_key_env: XHS_AGENT_DEEPSEEK_KEY
+    models:
+      fast: deepseek-chat
+      quality: deepseek-chat
+      creative: deepseek-chat
+
+  - name: deepseek_anthropic
+    base_url: https://api.deepseek.com/anthropic
+    api_key_env: XHS_AGENT_DEEPSEEK_KEY
+    models:
+      fast: deepseek-chat
+      quality: deepseek-reasoner
+      creative: deepseek-chat

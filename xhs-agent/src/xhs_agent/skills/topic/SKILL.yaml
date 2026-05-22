@@ -1,0 +1,5 @@
+name: topic
+description: "选题调研 — 热门话题监控、竞品爆款分析、AI 选题推荐"
+version: "0.1.0"
+depends_on: []
+triggers: ["选题", "热门话题", "topic research"]

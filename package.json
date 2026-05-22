@@ -1,0 +1,16 @@
+{
+  "name": "growth-os-monorepo",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:backend": "cd backend && npm run dev",
+    "build:frontend": "cd frontend && npm run build",
+    "install:all": "cd frontend && npm install && cd ../backend && npm install",
+    "cap:init": "cd frontend && npx cap init GrowthOSMobile com.growthos.mobile",
+    "cap:add": "cd frontend && npx cap add android",
+    "cap:sync": "cd frontend && npx cap sync",
+    "cap:open": "cd frontend && npx cap open android",
+    "cap:build": "cd frontend && npm run build && npx cap sync"
+  }
+}

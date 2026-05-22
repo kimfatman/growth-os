@@ -1,0 +1,73 @@
+.page {
+  min-height: 100vh;
+  padding: var(--spacing-md);
+}
+
+.form-container {
+  background: var(--bg-primary);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.textarea {
+  min-height: 160rpx;
+}
+
+.select-trigger {
+  display: flex;
+  align-items: center;
+  min-height: 72rpx;
+}
+
+.select-trigger.placeholder {
+  color: var(--text-tertiary);
+}
+
+.success-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.success-card {
+  background: var(--bg-primary);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-xl);
+  width: 500rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: var(--shadow-lg);
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(40rpx); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.success-icon {
+  font-size: 80rpx;
+  margin-bottom: var(--spacing-md);
+}
+
+.success-title {
+  font-size: var(--font-xl);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.success-desc {
+  font-size: var(--font-sm);
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-lg);
+}

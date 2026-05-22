@@ -1,0 +1,103 @@
+<view class="page">
+  <view wx:if="{{!company && !showCreateForm}}" class="no-company">
+    <view class="empty-state">
+      <text>您还没有加入任何公司</text>
+      <button class="btn btn-primary" bind:tap="showCreate">创建公司</button>
+    </view>
+  </view>
+
+  <view wx:if="{{showCreateForm}}" class="form-container">
+    <view class="form-card">
+      <text class="form-title">创建公司</text>
+      <view class="input-group">
+        <label>公司名称 *</label>
+        <input class="input" placeholder="请输入公司名称" value="{{form.name}}" bindinput="onFormInput" data-field="name" />
+      </view>
+      <view class="input-group">
+        <label>所在城市</label>
+        <input class="input" placeholder="请输入城市" value="{{form.city}}" bindinput="onFormInput" data-field="city" />
+      </view>
+      <view class="input-group">
+        <label>公司描述</label>
+        <textarea class="input textarea" placeholder="请输入公司简介" value="{{form.description}}" bindinput="onFormInput" data-field="description" />
+      </view>
+      <view class="input-group">
+        <label>联系电话</label>
+        <input class="input" type="text" placeholder="请输入联系电话" value="{{form.contactPhone}}" bindinput="onFormInput" data-field="contactPhone" />
+      </view>
+      <button class="btn btn-primary btn-block" loading="{{submitting}}" bind:tap="handleCreateCompany">创建公司</button>
+      <button class="btn btn-outline btn-block" bind:tap="hideCreate">取消</button>
+    </view>
+  </view>
+
+  <view wx:if="{{company && !showCreateForm}}" class="company-detail">
+    <view class="company-header">
+      <view class="company-avatar">
+        <text class="company-avatar-text">{{company.name ? company.name[0] : 'C'}}</text>
+      </view>
+      <view class="company-info">
+        <text class="company-name">{{company.name}}</text>
+        <text wx:if="{{company.city}}" class="company-city">{{company.city}}</text>
+        <text wx:if="{{company.contactPhone}}" class="company-phone">{{company.contactPhone}}</text>
+      </view>
+    </view>
+
+    <view wx:if="{{company.description}}" class="desc-section">
+      <text>{{company.description}}</text>
+    </view>
+
+    <view class="section-header">
+      <text class="section-title">团队成员（{{company.members ? company.members.length : 0}}人）</text>
+    </view>
+
+    <view class="member-list">
+      <view wx:for="{{company.members}}" wx:key="_id" class="member-item">
+        <view class="member-avatar">
+          <text class="member-avatar-text">{{item.name ? item.name[0] : 'U'}}</text>
+        </view>
+        <view class="member-info">
+          <text class="member-name">{{item.name}}</text>
+          <text class="member-role">{{roleMap[item.role] || '用户'}}</text>
+          <text wx:if="{{item.city}}" class="member-city">{{item.city}}</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="section-header">
+      <text class="section-title">内部派单</text>
+    </view>
+
+    <view class="task-form">
+      <view class="input-group">
+        <label>关联订单ID</label>
+        <input class="input" placeholder="请输入订单ID" value="{{taskForm.orderId}}" bindinput="onTaskInput" data-field="orderId" />
+      </view>
+      <view class="input-group">
+        <label>负责人ID</label>
+        <input class="input" placeholder="请输入成员ID" value="{{taskForm.assigneeId}}" bindinput="onTaskInput" data-field="assigneeId" />
+      </view>
+      <view class="input-group">
+        <label>任务标题 *</label>
+        <input class="input" placeholder="请输入任务标题" value="{{taskForm.title}}" bindinput="onTaskInput" data-field="title" />
+      </view>
+      <view class="input-group">
+        <label>任务描述</label>
+        <textarea class="input textarea" placeholder="请输入任务描述" value="{{taskForm.description}}" bindinput="onTaskInput" data-field="description" />
+      </view>
+      <button class="btn btn-primary btn-block" loading="{{taskSubmitting}}" bind:tap="handleCreateTask">创建任务</button>
+    </view>
+
+    <view class="task-list">
+      <view wx:for="{{tasks}}" wx:key="_id" class="task-card">
+        <view class="task-header">
+          <text class="task-title">{{item.title}}</text>
+          <text class="status-tag status-{{item.status}}">{{taskStatusMap[item.status]}}</text>
+        </view>
+        <view class="task-meta">
+          <text>负责人: {{item.assigneeId ? item.assigneeId.name : '未知'}}</text>
+          <text wx:if="{{item.orderId}}" class="task-order">订单: {{item.orderId.title || item.orderId._id}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

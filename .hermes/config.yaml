@@ -1,0 +1,4 @@
+onboarding:
+  seen:
+    openclaw_residue_cleanup: true
+    tool_progress_prompt: true

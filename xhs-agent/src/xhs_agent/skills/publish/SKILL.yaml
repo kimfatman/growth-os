@@ -1,0 +1,5 @@
+name: publish
+description: "笔记发布 — CDP 控制 Chromium 自动发布到小红书 Web 端"
+version: "0.1.0"
+depends_on: ["content", "style"]
+triggers: ["发布笔记", "publish note"]
